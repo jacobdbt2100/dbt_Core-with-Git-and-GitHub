@@ -19,7 +19,7 @@
 
 ### 1.2 Create and activate a virtual environment
 
-```command line
+```PowerShell
 # Create a folder for your project
 mkdir dbt_postgres_project
 
