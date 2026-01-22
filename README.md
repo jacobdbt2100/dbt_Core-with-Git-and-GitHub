@@ -76,9 +76,10 @@ Plugins:
 
 ## 2. Connect dbt Project to Data Source
 
-### 2.1 Initialize a dbt project
+### 2.1 Initialize dbt project
 
 - Create a `Database/Catalog` and `Schema` in Data Source Platform (e.g., Databricks, Snowflake, PostgreSQL, etc.)
+- Initialize project:
 
 ```PowerShell
 # Initialize
@@ -87,16 +88,15 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 
 **dbt will ask for:**
 
-- **project name**: `my_dbt_project`
+- **project name**: `dbt_project_name`
 - **host**: `localhost`
 - **port**: same as system suggestion `Enter`
 - **username**: `dbt_user`
 - **password**: `dbt_password` (typing won't appear on screen; just type and enter)
-- **dbname**: `analytics` (**case sensitive** for **PostgreSQL**)
+- **dbname**: `analytics`
 - **schema**: `dbt_schema`
-- **threads**: `1 to 4` for free or small setup (like **local Postgres**) is good to avoid overloading the system. In the **cloud** or **production**, users often set **8–16** (depending on the power of the data warehouse).
+- **threads**: 1 # the number of models dbt can run in parallel during execution
 - **Adapter**: `postgres`
-- **Profile**: same as project name (`my_dbt_project`)
+- **Profile**: `dbt_project_name`
 
-`dbt init my_dbt_project` skips the first question: “Enter a name for your project”
-`threads` is the number of simultaneous queries dbt runs to make builds faster.
+`dbt init dbt_project_name` skips the first question: “Enter a name for your project”
