@@ -95,16 +95,14 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 - **Desired access token option**: XXXXXXXXX # (for databricks at "Settings-Developer-Access tokens-Manage-Generate new token) # (won't appear on CLI screen; just paste and press enter)
 - **Desired unity catalog option**: use Unity Catalog
 - **catalog (initial catalog)**: catalog_name # or database_name
-- **schema (default schema that dbt will build objects in)**: 
+- **schema (default schema that dbt will build objects in)**: schema_name
+- **threads**: 1 # the number of models dbt can run in parallel during execution
 
-
+`others (for postgres):`
 - **port**: # or `5432` for postgres
 - **username**: `jacobdbt2100`
 - **password**: `Mbo@12345678` (typing won't appear on CLI screen; just type and press enter)
-
-- **schema**: `schema name`
-- **threads**: 1 # the number of models dbt can run in parallel during execution
-- **Adapter**: # or `postgres` for postgres
+- **Adapter**: `postgres` # for postgres
 - **Profile**: `dbt_project_name`
 
 `dbt init dbt_project_name` skips the first question: “Enter a name for your project”
