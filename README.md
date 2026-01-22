@@ -1,7 +1,7 @@
 # dbt_Core Setup
 
 ---
-## 1. Environment Setup
+## 1. Setup dbt Environment
 
 ### 1.1 Install the required dependencies (tools)
 
@@ -74,7 +74,7 @@ Plugins:
   - databricks: 1.6.11 # for databricks adapter
 ```
 
-## 2. Connect dbt to Source
+## 2. Connect dbt Environment to Data Source
 ### 2.1 Create a Database/Catalog and user in Adapter Platform (e.g., Databricks, Snowflake, PostgreSQL, etc.)
 
 
