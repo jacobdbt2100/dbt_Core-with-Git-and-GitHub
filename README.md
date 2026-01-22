@@ -1,8 +1,5 @@
 # dbt_Core Setup
 
-- [Connect to adapters](https://docs.getdbt.com/docs/connect-adapters)
-- [Trusted adapters](https://docs.getdbt.com/docs/trusted-adapters)
-
 ---
 ## 1. Environment Setup
 
@@ -15,4 +12,7 @@
 | **adapter (database)**                      | `"adapter" --version` (for local setup, not cloud)                                    |
 | **Git**                                     | `git --version`                                                                       |
 | **VS Code** (or your preferred IDE)         | `code --version`                                                                      |
+
+- [Connect to adapters](https://docs.getdbt.com/docs/connect-adapters)
+- [Trusted adapters](https://docs.getdbt.com/docs/trusted-adapters)
 
