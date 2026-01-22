@@ -3,7 +3,7 @@
 ---
 ## 1. Setup dbt Environment
 
-### 1.1 Install the required dependencies (tools)
+### 1.1 Install the required Dependencies (tools)
 
 | Dependency                                  | cmd Check if exist                                                                    |
 | ------------------------------------------- | ------------------------------------------------------------------------------------- |
@@ -17,7 +17,7 @@
 - [Connect to adapters](https://docs.getdbt.com/docs/connect-adapters)
 - [Trusted adapters](https://docs.getdbt.com/docs/trusted-adapters)
 
-### 1.2 Create and activate a virtual environment
+### 1.2 Create and Activate a Virtual Environment
 
 ```PowerShell
 # Create a folder for your project
@@ -43,7 +43,7 @@ Run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
 Reverse command after venv activation: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined`
 ```
 
-### 1.3 Install dbt core and adapter (e.g., Databricks, Snowflake, PostgreSQL, etc.)
+### 1.3 Install dbt core and Adapter (e.g., Databricks, Snowflake, PostgreSQL, etc.)
 
 ```PowerShell
 # Install both dbt and dbt adapter
@@ -76,7 +76,7 @@ Plugins:
 
 ## 2. Connect dbt Project to Data Source
 
-### 2.1 Initialize dbt project
+### 2.1 Initialize dbt Project and Configure Profile
 
 - Create a `Database/Catalog` and `Schema` in Data Source Platform (e.g., Databricks, Snowflake, PostgreSQL, etc.)
 - Initialize project:
@@ -101,8 +101,6 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 
 `dbt init dbt_project_name` skips the first question: “Enter a name for your project”
 
-### 2.2 Configure dbt profile
-
 Your **profiles.yml** file (editable) is located here:
 
 **Windows**:
@@ -125,7 +123,7 @@ dbt_project_name:
       threads: 1
 ```
 
-### 2.3 Test the connection
+### 2.2 Test the connection
 
 ```PowerShell
 # Switch to project directory
