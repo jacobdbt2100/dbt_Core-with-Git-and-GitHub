@@ -89,11 +89,18 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 **dbt will ask for:**
 
 - **project name**: `dbt_project_name`
-- **host**: # or `localhost` for postgres
+- **dbname**: `database name`
+- **host**: dbc-71c78b23-9eaa.cloud.databricks.com # (for my databricks) or `localhost` for postgres
+- **http_path**: /sql/1.0/warehouses/8e5d3729930bb8f2
+- **Desired access token option**:
+
+
+
+
 - **port**: # or `5432` for postgres
 - **username**: `jacobdbt2100`
 - **password**: `Mbo@12345678` (typing won't appear on screen; just type and press enter)
-- **dbname**: `database name`
+
 - **schema**: `schema name`
 - **threads**: 1 # the number of models dbt can run in parallel during execution
 - **Adapter**: # or `postgres` for postgres
