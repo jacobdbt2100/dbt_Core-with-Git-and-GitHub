@@ -103,7 +103,7 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 
 ### 2.2 Configure dbt profile
 
-Your **profiles.yml** is located here:
+Your **profiles.yml** file (editable) is located here:
 
 **Windows**:
 > C:\Users\<YourUser>\.dbt\profiles.yml
@@ -111,34 +111,28 @@ Your **profiles.yml** is located here:
 **Example configuration**:
 
 ```yml
-my_dbt_project:
+dbt_project_name:
   target: dev
   outputs:
     dev:
       type: postgres
       host: localhost
-      user: dbt_user
-      password: dbt_password
+      user: jacobdbt2100
+      password: Mbo@12345678
       port: 5432
-      dbname: analytics
-      schema: dbt_schema
-      threads: 4
+      dbname: database_name
+      schema: schema_name
+      threads: 1
 ```
 
 ### 2.3 Test the connection
 
-```bash
+```PowerShell
 # Switch to project directory
-cd my_dbt_project
+cd dbt_project_name
+
 # test connection
-dbt debug
-```
-Alternatively, use this to test the specified project directory;
-```bash
-# Switch to project directory
-cd my_dbt_project
-# test connection
-dbt debug --profile my_dbt_project
+dbt debug # or "dbt debug --profile dbt_project_name" to target a specific dbt project
 ```
 
 If successful, you’ll see:
