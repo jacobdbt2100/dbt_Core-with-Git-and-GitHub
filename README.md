@@ -83,7 +83,7 @@ Plugins:
 
 ```PowerShell
 # Initialize
-dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project out of many in the same environment)
+dbt init # or "dbt init dbt_project_name" (to initialize a specific dbt project out of many in the same environment)
 ```
 
 **dbt will ask for:**
@@ -104,8 +104,6 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 - **password**: `Mbo@12345678` (typing won't appear on CLI screen; just type and press enter)
 - **Adapter**: `postgres` # for postgres
 - **Profile**: `dbt_project_name`
-
-`dbt init dbt_project_name` skips the first question: “Enter a name for your project”
 
 Your **profiles.yml** file (editable) is located here:
 
