@@ -46,3 +46,51 @@ Run `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
 
 Reverse command after venv activation: `Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Undefined`
 ```
+
+### 1.3 Install dbt adapter (e.g, Databricks, Snowflake, PostgreSQL, etc.)
+
+```PowerShell
+# Install both dbt and dbt adapter
+pip install dbt-core dbt-databricks # (for Databricks)
+pip install dbt-core dbt-snowflake # (for Snowflake)
+pip install dbt-core dbt-postgres # (for PostgreSQL)
+
+# Freeze dependencies (to make venv reproducible)
+pip freeze > requirements.txt
+```
+Alternatively, edit existing requirements.txt (for a previously used venv) to contain required dependencies ( dbt-core, dbt-postgres) and run;
+```bash
+pip install -r requirements.txt
+```
+
+> **pip freeze > requirements.txt** displays list of installed packages and save the list into a file called requirements.txt
+
+> **Later (for reuse)**
+Anyone cloning this Git repo just needs to do:
+```bash
+# Create virtual environment
+python3 -m venv venv
+
+#Activate it
+venv\Scripts\activate (for Windows) or source venv/bin/activate (for Mac/Linux)
+
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+```
+> That recreates the same dbt environment exactly.
+
+```bash
+# Verify installed adapters
+pip freeze
+
+# Verify dbt installation
+dbt --version
+```
+Expected output (example):
+
+```yml
+Core:
+  - installed version: 1.8.5
+Plugins:
+  - postgres: 1.8.5
+```
