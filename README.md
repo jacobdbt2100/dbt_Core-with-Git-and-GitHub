@@ -29,7 +29,7 @@ cd dbt_project_name
 mkdir dbt_project_name && cd dbt_project_name # (Alternatively, create folder and change directory to the new folder)
 
 # Create virtual environment
-python3 -m venv .venv
+python3 -m venv venv
 
 # Activate virtual environment
 venv/Scripts/activate # ( with Windows); notice the prefix "venv" after activation
