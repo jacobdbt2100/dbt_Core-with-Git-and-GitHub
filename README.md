@@ -3,7 +3,7 @@
 ---
 ## 1. Environment Setup
 
-### 1.1 Install the required tools
+### 1.1 Install the required dependencies (tools)
 
 | Dependency                                  | cmd Check if exist                                                                    |
 | ------------------------------------------- | ------------------------------------------------------------------------------------- |
