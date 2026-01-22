@@ -89,14 +89,14 @@ dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project 
 **dbt will ask for:**
 
 - **project name**: `dbt_project_name`
-- **host**: `localhost`
-- **port**: same as system suggestion `Enter`
-- **username**: `dbt_user`
-- **password**: `dbt_password` (typing won't appear on screen; just type and enter)
-- **dbname**: `analytics`
-- **schema**: `dbt_schema`
+- **host**: # or `localhost` for postgres
+- **port**: # or `5432` for postgres
+- **username**: `jacobdbt2100`
+- **password**: `Mbo@12345678` (typing won't appear on screen; just type and press enter)
+- **dbname**: `database name`
+- **schema**: `schema name`
 - **threads**: 1 # the number of models dbt can run in parallel during execution
-- **Adapter**: `postgres`
+- **Adapter**: # or `postgres` for postgres
 - **Profile**: `dbt_project_name`
 
 `dbt init dbt_project_name` skips the first question: “Enter a name for your project”
