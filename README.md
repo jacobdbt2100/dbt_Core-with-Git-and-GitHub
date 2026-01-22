@@ -73,3 +73,38 @@ Core:
 Plugins:
   - databricks: 1.6.11 # for databricks adapter
 ```
+
+## 2. Connect dbt to Source
+### 2.1 Create a Database/Catalog and user in Adapter Platform (e.g., Databricks, Snowflake, PostgreSQL, etc.)
+
+
+
+
+
+
+
+Log in to PostgreSQL (via **pgAdmin** or **psql**) and run:
+
+```sql
+CREATE DATABASE analytics;
+CREATE USER dbt_user WITH PASSWORD 'dbt_password';
+GRANT ALL PRIVILEGES ON DATABASE analytics TO dbt_user;
+```
+Then create a sample **schema** and **table**:
+
+```sql
+CREATE SCHEMA raw;
+
+CREATE TABLE raw.customers (
+    customer_id SERIAL PRIMARY KEY,
+    name TEXT,
+    gender TEXT,
+    annual_income NUMERIC
+);
+
+INSERT INTO raw.customers (name, gender, annual_income) VALUES
+('Alice', 'Female', 55000),
+('Bob', 'Male', 72000),
+('Clara', 'Female', 48000),
+('David', 'Male', 88000);
+```
