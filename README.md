@@ -108,3 +108,26 @@ INSERT INTO raw.customers (name, gender, annual_income) VALUES
 ('Clara', 'Female', 48000),
 ('David', 'Male', 88000);
 ```
+
+### 2.2 Initialize a dbt project
+
+```bash
+# Initialize
+dbt init # (or "dbt init dbt_project_name" to initialize a specific dbt project out of many in the same environment)
+```
+
+dbt will ask for:
+
+- **project name**: `my_dbt_project`
+- **host**: `localhost`
+- **port**: same as system suggestion `Enter`
+- **username**: `dbt_user`
+- **password**: `dbt_password` (typing won't appear on screen; just type and enter)
+- **dbname**: `analytics` (**case sensitive** for **PostgreSQL**)
+- **schema**: `dbt_schema`
+- **threads**: `1 to 4` for free or small setup (like **local Postgres**) is good to avoid overloading the system. In the **cloud** or **production**, users often set **8–16** (depending on the power of the data warehouse).
+- **Adapter**: `postgres`
+- **Profile**: same as project name (`my_dbt_project`)
+
+`dbt init my_dbt_project` skips the first question: “Enter a name for your project”
+`threads` is the number of simultaneous queries dbt runs to make builds faster.
