@@ -149,16 +149,16 @@ All checks passed!
 In **models/**, create **customers_view.sql**:
 
 ```sql
--- {{ config(materialized='view') }}
--- Optional: overrides the model’s materialization defined in schema.yml (not advised) or dbt_project.yml
--- (model-level config has the highest priority)
+{{ config(materialized='view') }}
+    -- Optional: overrides the model’s materialization defined in schema.yml (not advised) or dbt_project.yml (more preferred)
+    -- model-level config has the highest priority
 
 SELECT
     customer_id,
     name,
     gender,
     annual_income
-FROM {{ source('raw', 'customers') }} --analytics.raw.customers
+FROM {{ source('raw', 'customers') }} --analytics.raw.customers (i.e., database.schema.table)
 WHERE annual_income > 50000
 ```
 
@@ -170,11 +170,17 @@ Create **models/schema.yml**:
 version: 2
 
 sources:
-  - name: raw_customers_table # (or some other descriptive name; not restricted)
-    schema: raw  # raw/source schema
-    description: "customers raw data"
+  - name: sales_data      # This is the source name you'll use in dbt; choose any descriptive name
+    database: analytics_db  # Optional: the database where the table lives; otherwise, dbt points to the default database
+    schema: raw            # Schema in the database
     tables:
-      - name: customers
+      - name: orders       # The name you'll refer to in dbt; dbt points to "Identifier", if provided
+        identifier: orders_2026  # Optional: Actual table name in the database
+
+
+
+
+
 
 --Optional
 models:
