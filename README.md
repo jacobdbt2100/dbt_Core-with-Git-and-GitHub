@@ -213,3 +213,171 @@ select *
 from {{ ref('orders_model_view') }}
 where order_quantity > 1
 ```
+
+
+
+
+
+
+
+### 3.5 Run and test the model
+
+```bash
+dbt run
+```
+Alternatively, to run a specific model;
+```bash
+dbt run --select customers_view
+```
+`customers_view` is the only model in this example.
+
+Generally, to run multiple selected models;
+```bash
+dbt run -m model1 model2 model3 ...
+```
+Or equivalently;
+```bash
+dbt run --select model1 model2 model3 ...
+```
+
+`-m`(or `--models`) is the older, common shortcut.
+
+Check in PostgreSQL:
+```sql
+SELECT * FROM dbt_schema.customers_view;
+```
+
+### 3.6 Add tests (optional but recommended)
+
+In **schema.yml**, add:
+```yml
+models:
+  - name: customers_view
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+```
+
+Then run:
+```bash
+dbt test
+```
+`dbt tests` help **validate data quality** — like `missing values`, `duplicates`, or `mismatched relationships between tables`.
+
+> **Where Tests Live:**
+
+**(a) Inside schema.yml** (generic tests)
+
+✅ This is the most common and recommended way.
+
+Example:
+
+```yml
+version: 2
+
+models:
+  - name: fact_orders
+    columns:
+      - name: customer_id
+        data_tests:
+          - relationships:
+              field: customer_id
+              to: ref('dim_customers')
+              
+  - name: customers
+    description: "Customer data"
+    columns:
+      - name: customer_id
+        data_tests:
+          - not_null
+          - unique
+      - name: email
+        data_tests:
+          - not_null
+```
+Here, dbt will automatically generate and run tests for:
+- Missing customer_id values
+- Duplicate customer_id values
+- Missing email values
+
+These are **generic tests** (built-in).
+
+**(b) Inside the /tests folder** (singular / custom SQL tests)
+
+This is for custom SQL tests you create manually.
+
+Example folder:
+
+```pgsql
+dbt_project/
+├── models/
+│   ├── staging/
+│   └── marts/
+├── tests/
+│   └── customers_email_valid.sql
+```
+Content of `customers_email_valid.sql`:
+
+```sql
+-- Fail if any invalid emails exist
+select *
+from {{ ref('customers') }}
+where email not like '%@%.%'
+```
+**(c) As a standalone test macro**
+
+If you want reusable logic (e.g., check pattern validity across multiple tables), you can write a custom test macro in `/macros/tests/`.
+
+Example macros/tests/test_email_pattern.sql:
+
+```sql
+{% test email_pattern(model, column_name) %}
+    select *
+    from {{ model }}
+    where {{ column_name }} not like '%@%.%'
+{% endtest %}
+```
+Then, reference it in schema.yml:
+
+```yml
+columns:
+  - name: email
+    data_tests:
+      - email_pattern
+```
+**TESTS** Summary:
+
+`tests/` **folder**: singular / custom SQL tests (complex rules, multi-column checks, business logic)
+
+`schema.yml`: generic tests (not_null, unique, accepted_values, relationships)
+
+**model SQL via** `config()`: can define generic tests, but **less common / not recommended**
+
+> **Summary — What Goes Where**
+
+| Type              | Purpose                                                                     | Location                | Defined in  |
+| ----------------- | --------------------------------------------------------------------------- | ----------------------- | ----------- |
+| Generic Test      | Common checks like `not_null`, `unique`, `accepted_values`, `relationships` | `schema.yml`            | YAML syntax |
+| Custom SQL Test   | One-off data quality checks                                                 | `/tests/` folder        | SQL query   |
+| Custom Macro Test | Reusable test logic                                                         | `/macros/tests/` folder | Jinja macro |
+
+> **How to Run Tests:**
+
+| **Goal**                                               | **Command**                                                       |
+| ------------------------------------------------------ | ----------------------------------------------------------------- |
+| All tests in project                                   | `dbt test`                                                        |
+| All tests for `customers` model                        | `dbt test --select customers`                                     |
+| All tests for `orders` model                           | `dbt test --select orders`                                        |
+| Tests for a specific column (`customer_id`)            | `dbt test --select customers.customer_id`                         |
+| Only `not_null` tests for `customers`                  | `dbt test --select customers -s test_type:not_null`               |
+| Only `unique` tests for `customers`                    | `dbt test --select customers -s test_type:unique`                 |
+| Only `not_null` tests for `orders`                     | `dbt test --select orders -s test_type:not_null`                  |
+| Only `unique` tests for `orders`                       | `dbt test --select orders -s test_type:unique`                    |
+| Specific SQL test file (e.g., `invalid_email.sql`)     | `dbt test --select invalid_email`                                 |
+| Run tests for both models together                     | `dbt test --select customers orders`                              |
+| Run only `not_null` and `unique` tests for both models | `dbt test --select customers orders -s test_type:not_null,unique` |
+
+## 4. Version Control with Git
+### 4.1 Initialize Git
