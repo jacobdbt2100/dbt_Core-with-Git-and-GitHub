@@ -146,7 +146,7 @@ All checks passed!
 ## 3. Working with dbt Models
 ### 3.1 Create a model file
 
-Create **models/orders_model_view.sql**:
+`Directory` **models/orders_model_view.sql:**
 
 ```sql
 {{ config(materialized='view') }}
@@ -164,7 +164,7 @@ WHERE total_amt > 50000
 
 ### 3.2 Define the source
 
-`File` **models/source.yml**:
+`Directory` **models/source.yml:**
 
 ```yml
 version: 2
@@ -189,7 +189,7 @@ sources:
 
 
 
-`File:` models/models.yml
+`Directory` **models/models.yml:**
 
 version: 2
 
