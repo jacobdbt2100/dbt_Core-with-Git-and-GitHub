@@ -226,50 +226,40 @@ where order_quantity > 1
 
 There are two types of test:
 
-- Generic
+- Generic (or built-in)
 - Singular (or Custom SQL)
 
 **1. Inside schema.yml** (generic tests)
 
-✅ This is the most common and recommended way.
-
-Example:
-
 ```yml
-version: 2
-
 models:
-  - name: fact_orders
+  - name: customers_view
     columns:
       - name: customer_id
         data_tests:
-          - relationships:
+          - not_null          # Ensures no null values in customer_id
+          - unique            # Ensures customer_id is unique
+          - relationships:    # Ensures customer_id exists in orders.customer_id
+              to: ref('orders')
               field: customer_id
-              to: ref('dim_customers')
-              
-  - name: customers
-    description: "Customer data"
-    columns:
-      - name: customer_id
-        data_tests:
-          - not_null
-          - unique
-      - name: email
-        data_tests:
-          - not_null
-```
-Here, dbt will automatically generate and run tests for:
-- Missing customer_id values
-- Duplicate customer_id values
-- Missing email values
 
-These are **generic tests** (built-in).
+      - name: customer_status
+        data_tests:
+          - accepted_values:
+              values:         # Only allows these statuses # Can also be written horizontally; ['active', 'inactive', 'prospect']
+                - active
+                - inactive
+                - prospect
+```
+
+
+
+
+
 
 **2. Inside the /tests folder** (singular / custom SQL tests)
 
 This is for custom SQL tests you create manually.
-
-Example folder:
 
 ```pgsql
 dbt_project/
@@ -287,6 +277,20 @@ select *
 from {{ ref('customers') }}
 where email not like '%@%.%'
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 3.6 Define a standalone test macro
 
 If you want reusable logic (e.g., check pattern validity across multiple tables), you can write a custom test macro in `/macros/tests/`.
