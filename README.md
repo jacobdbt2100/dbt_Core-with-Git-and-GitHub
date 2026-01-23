@@ -306,13 +306,13 @@ where email not like '%@%.%'
 
 
 
-### 3.7 Define custom test macros
+### 3.7 Define test macros (custom generic tests)
 
 To create reusable logic (e.g., check pattern validity across multiple tables), write a custom test macro.
 
 `Directory` **macros/tests/email_pattern_test.sql:**
 
-```sql
+```jinja
 {% test email_pattern(model, column_name) %}
     select *
     from {{ model }}
