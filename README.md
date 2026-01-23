@@ -224,22 +224,39 @@ where order_quantity > 1
 
 ### 3.5 Define tests
 
-There are two types of test:
+**Two types of dbt tests:**
 
-- Generic (or built-in)
-- Singular (or Custom SQL)
+- `Generic (Built-in) tests:` pre-defined dbt tests applied via YAML.
+- `Singular (Custom SQL) tests:` custom SQL queries that return rows if a condition fails.
 
 **1. Generic (or Built-in) test**
 
 `Directory` **models/source.yml:**
 
-
+```yml
+sources:
+  - name: sales_data
+    database: analytics_db
+    schema: raw
+    tables:
+      - name: customers
+        columns:
+          - name: customer_id
+            tests:
+              - not_null    # Ensure no nulls in customer_id
+              - unique      # Ensure customer_id is unique
+          - name: customer_status
+            tests:
+              - not_null                    # Ensure every row has a status
+              - accepted_values:            # Only allow defined statuses
+                  values: ['active', 'inactive', 'prospect']
+```
 
 `Directory` **models/model.yml:**
 
 ```yml
 models:
-  - name: customers_view
+  - name: dim_customers
     columns:
       - name: customer_id
         data_tests:
