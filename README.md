@@ -174,7 +174,7 @@ sources:
     database: analytics_db  # Optional: the database where the table lives; otherwise, dbt points to the default database
     schema: raw            # Schema in the database
     tables:
-      - name: orders       # The name you'll refer to in dbt; dbt points to "Identifier", if provided
+      - name: orders       # The name you'll refer to in dbt
         identifier: orders_2026  # Optional: Actual table name in the database
 
 
