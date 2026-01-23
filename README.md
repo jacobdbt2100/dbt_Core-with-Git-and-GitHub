@@ -161,7 +161,7 @@ FROM {{ source('sales_data', 'orders') }} --analytics_db.raw.orders (i.e., datab
 WHERE total_amt > 50000
 ```
 
-### 3.2 Define the source
+### 3.2 Define the source(s)
 
 `Directory` **models/source.yml:**
 
@@ -182,11 +182,7 @@ sources:
         description: "Customer master data table"
 ```
 
-
-
-
-
-
+### 3.3 Define the model(s)
 
 `Directory` **models/models.yml:**
 
