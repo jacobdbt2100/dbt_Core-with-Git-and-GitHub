@@ -142,3 +142,53 @@ If successful, you’ll see:
 ```css
 All checks passed!
 ```
+
+## 3. Working with dbt Models
+### 3.1 Create a model file
+
+In **models/**, create **customers_view.sql**:
+
+```sql
+-- {{ config(materialized='view') }}
+-- Optional: overrides the model’s materialization defined in schema.yml (not advised) or dbt_project.yml
+-- (model-level config has the highest priority)
+
+SELECT
+    customer_id,
+    name,
+    gender,
+    annual_income
+FROM {{ source('raw', 'customers') }} --analytics.raw.customers
+WHERE annual_income > 50000
+```
+
+### 3.2 Define the source
+
+Create **models/schema.yml**:
+
+```yml
+version: 2
+
+sources:
+  - name: raw_customers_table # (or some other descriptive name; not restricted)
+    schema: raw  # raw/source schema
+    description: "customers raw data"
+    tables:
+      - name: customers
+
+--Optional
+models:
+  - name: customers_view
+    description: --add description here
+    columns:
+      - name: customer_id
+        data_tests: --(this test is inside schema.yml; other options are- inside the "/tests" folder, as a standalone test macro in "macros/tests/"
+          -  not_null
+          -  unique
+      - name: annual_income
+        data_tests:
+          - not_null 
+    config:
+      materialized: view --can be overridden or simply configured in the model(.sql) file
+      alias: --transformed_customers --optional; to change the model name in the transformed schema
+```
