@@ -146,7 +146,7 @@ All checks passed!
 ## 3. Working with dbt Models
 ### 3.1 Create a model file
 
-Create **models/customers_view.sql**:
+Create **models/orders_model_view.sql**:
 
 ```sql
 {{ config(materialized='view') }}
