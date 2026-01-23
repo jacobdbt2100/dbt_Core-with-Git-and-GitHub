@@ -32,8 +32,8 @@ mkdir dbt_project_folder && cd dbt_project_folder # (Alternatively, create folde
 python3 -m venv venv
 
 # Activate virtual environment
-venv/Scripts/activate # ( with Windows); notice the prefix "venv" after activation
-source venv/bin/activate # ( with Mac/Linux)
+venv/Scripts/activate # (in Windows); notice the prefix "venv" after activation
+source venv/bin/activate # (in Mac/Linux)
 ```
 **Fix Execution Error (if exist) in PowerShell for Windows:**
 
