@@ -306,7 +306,7 @@ where email not like '%@%.%'
 
 
 
-### 3.7 Define a standalone test macro
+### 3.7 Define custom test macros
 
 To create reusable logic (e.g., check pattern validity across multiple tables), write a custom test macro.
 
