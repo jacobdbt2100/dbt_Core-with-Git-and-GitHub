@@ -214,6 +214,7 @@ from {{ ref('orders_model_view') }}
 where order_quantity > 1
 ```
 
+### 3.5 Run the model(s)
 
 
 
@@ -222,7 +223,8 @@ where order_quantity > 1
 
 
 
-### 3.5 Define tests
+
+### 3.6 Define tests
 
 **Two types of dbt tests:**
 
@@ -304,7 +306,7 @@ where email not like '%@%.%'
 
 
 
-### 3.6 Define a standalone test macro
+### 3.7 Define a standalone test macro
 
 To create reusable logic (e.g., check pattern validity across multiple tables), write a custom test macro.
 
@@ -329,7 +331,7 @@ columns:
 
 
 
-### 3.7 Run and test the model
+### 3.8 Test the source(s) and model(s)
 
 ```bash
 dbt run
