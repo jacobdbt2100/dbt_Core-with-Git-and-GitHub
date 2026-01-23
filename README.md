@@ -269,7 +269,7 @@ models:
       - name: customer_status
         data_tests:
           - accepted_values:
-              values:     # Only allows these statuses # Can also be written horizontally; ['active', 'inactive', 'prospect']
+              values:     # Only allows these statuses
                 - active
                 - inactive
                 - prospect
