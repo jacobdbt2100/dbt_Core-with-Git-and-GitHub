@@ -48,11 +48,9 @@ Reverse command after venv activation: `Set-ExecutionPolicy -Scope CurrentUser -
 
 ```PowerShell
 # Install both dbt and dbt adapter
-pip install dbt-core dbt-databricks # (for Databricks)
-python -m pip install dbt-core dbt-databricks (used this before achieving success)
-
-pip install dbt-core dbt-snowflake # (for Snowflake)
-pip install dbt-core dbt-postgres # (for PostgreSQL)
+python -m pip install dbt-core dbt-databricks # (for Databricks)
+python -m pip install dbt-core dbt-snowflake # (for Snowflake)
+python -m pip install dbt-core dbt-postgres # (for PostgreSQL)
 
 # Verify dbt installation
 dbt --version
