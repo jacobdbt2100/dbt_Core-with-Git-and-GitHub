@@ -155,7 +155,7 @@ All checks passed!
 select
     order_id,
     item,
-    quantity,
+    order_quantity,
     total_amt
 from {{ source('sales_data', 'orders') }} --analytics_db.raw.orders (i.e., database.schema.table)
 where total_amt > 50000
@@ -211,5 +211,5 @@ models:
 ```sql
 select *
 from {{ ref('orders_model_view') }}
-where quantity > 1
+where order_quantity > 1
 ```
