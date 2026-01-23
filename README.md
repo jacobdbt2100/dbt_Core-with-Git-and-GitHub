@@ -220,34 +220,9 @@ where order_quantity > 1
 
 
 
-### 3.5 Run and test the model
 
-```bash
-dbt run
-```
-Alternatively, to run a specific model;
-```bash
-dbt run --select customers_view
-```
-`customers_view` is the only model in this example.
 
-Generally, to run multiple selected models;
-```bash
-dbt run -m model1 model2 model3 ...
-```
-Or equivalently;
-```bash
-dbt run --select model1 model2 model3 ...
-```
-
-`-m`(or `--models`) is the older, common shortcut.
-
-Check in PostgreSQL:
-```sql
-SELECT * FROM dbt_schema.customers_view;
-```
-
-### 3.6 Add tests (optional but recommended)
+### 3.5 Add tests (optional but recommended)
 
 In **schema.yml**, add:
 ```yml
@@ -347,6 +322,41 @@ columns:
     data_tests:
       - email_pattern
 ```
+
+
+
+
+### 3.6 Run and test the model
+
+```bash
+dbt run
+```
+Alternatively, to run a specific model;
+```bash
+dbt run --select customers_view
+```
+`customers_view` is the only model in this example.
+
+Generally, to run multiple selected models;
+```bash
+dbt run -m model1 model2 model3 ...
+```
+Or equivalently;
+```bash
+dbt run --select model1 model2 model3 ...
+```
+
+`-m`(or `--models`) is the older, common shortcut.
+
+Check in PostgreSQL:
+```sql
+SELECT * FROM dbt_schema.customers_view;
+```
+
+
+
+
+
 **TESTS** Summary:
 
 `tests/` **folder**: singular / custom SQL tests (complex rules, multi-column checks, business logic)
