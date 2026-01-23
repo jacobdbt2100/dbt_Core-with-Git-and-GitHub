@@ -192,7 +192,7 @@ sources:
 
 
 
-EDIT LATER
+EDIT LATER (under Sources config in schema.yml)
 ```yml
 models:
   - name: customers_view
