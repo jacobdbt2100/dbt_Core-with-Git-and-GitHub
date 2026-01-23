@@ -181,11 +181,19 @@ sources:
       - name: customers
         identifier: customers_info
         description: "Customer master data table"
+```
 
 
 
 
---Optional
+
+
+
+
+
+
+EDIT LATER
+```yml
 models:
   - name: customers_view
     description: --add description here
