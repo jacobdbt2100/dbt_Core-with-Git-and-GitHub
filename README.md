@@ -152,13 +152,13 @@ All checks passed!
     -- Optional: overrides the model’s materialization defined in schema.yml (not advised) or dbt_project.yml (more preferred)
     -- model-level config has the highest priority
 
-SELECT
+select
     order_id,
     item,
     quantity,
     total_amt
-FROM {{ source('sales_data', 'orders') }} --analytics_db.raw.orders (i.e., database.schema.table)
-WHERE total_amt > 50000
+from {{ source('sales_data', 'orders') }} --analytics_db.raw.orders (i.e., database.schema.table)
+where total_amt > 50000
 ```
 
 ### 3.2 Define the source(s)
