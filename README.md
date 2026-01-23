@@ -428,3 +428,8 @@ dbt test
 
 ## 4. Version Control with Git
 ### 4.1 Initialize Git
+
+
+
+
+## 5. Advanced dbt Concepts
