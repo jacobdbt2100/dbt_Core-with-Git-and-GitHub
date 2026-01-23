@@ -206,7 +206,7 @@ models:
       alias: transformed_customers   # Optional: physical table/view name in the DB
 ```
 
-### 3.4 Use the `ref` function to select from other models
+### 3.4 Use the "ref" function to select from other models
 
 ```sql
 select *
