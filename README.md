@@ -285,7 +285,7 @@ models:
 `Directory` **tests/customers_email_valid.sql:**
 
 ```sql
--- Fails if any invalid emails exist
+-- Fails if any invalid emails exist in the customers model
 select *
 from {{ ref('customers') }}
 where email not like '%@%.%'
