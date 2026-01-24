@@ -442,11 +442,12 @@ git switch -c new_branch     # Alternative to checkout (Git 2.23+)
 git branch -m main           # Rename current branch to "main"
 git branch -m master main    # Rename "master" to "main" from anywhere
 ```
+
 **Update the remote**
 
 ```PowerShell
-git push origin -u main        # Push renamed branch and track it remotely
-git push origin --delete master # Delete old branch from remote
+git push -u origin main           # Push renamed branch and track it remotely
+git push origin --delete master   # Delete old branch from remote
 ```
 
 
