@@ -341,6 +341,73 @@ dbt test
 ```
 
 
+```PowerShell
+# =========================
+# DBT RUN (Models execution)
+# =========================
+
+# Run all models
+dbt run
+
+# Run a specific model only
+dbt run --select customers_view
+
+# Run multiple specific models
+dbt run --select model1 model2 model3
+
+# Run models using pattern matching (e.g. all staging models)
+dbt run --select stg_*
+
+# Run a model and its upstream dependencies (parents)
+dbt run --select +customers_view
+
+# Run a model and its downstream dependents (children)
+dbt run --select customers_view+
+
+# Run a model, its parents, and its children
+dbt run --select +customers_view+
+
+
+# =========================
+# DBT TEST (Tests execution)
+# =========================
+
+# Run all tests (models + sources)
+dbt test
+
+# Run tests for a specific model only
+dbt test --select customers_view
+
+# Run tests for multiple models
+dbt test --select model1 model2 model3
+
+# Run tests for a model and its upstream dependencies
+dbt test --select +customers_view
+
+# Run tests for a model and its downstream dependents
+dbt test --select customers_view+
+
+# Run tests for both upstream and downstream
+dbt test --select +customers_view+
+
+
+# =========================
+# DBT TEST (Sources only)
+# =========================
+
+# Run all tests for all sources
+dbt test --select source:*
+
+# Run all tests for a specific source
+dbt test --select source:sales_data
+
+# Run tests for two (or more) sources
+dbt test --select source:source1 source:source2 ...
+
+# Run tests for a specific table in a source
+dbt test --select source:sales_data.customers
+```
+
 
 
 
