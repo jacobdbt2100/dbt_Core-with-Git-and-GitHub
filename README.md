@@ -406,6 +406,9 @@ git init # Converts the folder into a Git repository
 
 ### 4.2 Git Insiders
 
+`.git` Flow: `Working Directory` > `Staging Area (Snapshot)` > `Repository`
+
+
 ### 4.3 Git Add and Git Commit
 
 An **initial commit** is needed to **register** the master (main) branch.
