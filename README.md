@@ -404,7 +404,16 @@ git init # Converts the folder into a Git repository
 
 ### 4.3 Git Add and Git Commit
 
-- Git Log
+```PowerShell
+git add .                              # Stage all changes in the folder
+git add file_name.ext                  # Stage only a specific file
+git add file1.txt file2.csv file3.py   # Stage multiple specific files at once
+git commit -m "initial commit"         # Commit staged changes with a message
+```
+
+### 4.4 Git Log
+
+
 - Gitignore & Gitkeep
 - Git Branches and Merges
 - Merge Conflicts
