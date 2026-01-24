@@ -420,15 +420,36 @@ git commit file1.txt file2.py -m "Message"   # Commit only specific files, leavi
 ### 4.4 Git Log
 
 
-- Gitignore & Gitkeep
-- Git Branches and Merges
-- Merge Conflicts
-- Git Rebase
-- Git Reflog and Commit History
-- Cherry Picking
-- Git Stashing
-- Push To GitHub
-- Git Clone and Push Feature Branch
+### Gitignore & Gitkeep
+
+### Git Branches and Merges
+
+```PowerShell
+git branch                   # List all local branches and show the current branch
+
+git branch new_branch        # Create a new branch (does not switch to it)
+
+git checkout new_branch      # Switch to an existing branch (new_branch)
+git switch new_branch        # Alternative to checkout (Git 2.23+)
+
+
+git checkout -b new_branch   # Create and switch to a new branch
+git switch -c new_branch     # Alternative to checkout (Git 2.23+)
+```
+
+### Merge Conflicts
+
+### Git Rebase
+
+### Git Reflog and Commit History
+
+### Cherry Picking
+
+### Git Stashing
+
+### Push To GitHub
+
+### Git Clone and Push Feature Branch
 
 
 **Common dbt-git workflow:**
