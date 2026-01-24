@@ -382,6 +382,10 @@ dbt test --select source:sales_data.customers
 - `GitHub:` A cloud platform for hosting and collaborating on Git repositories.
 - `Repository:` A project folder tracked by Git.
 
+**.git Flow:** `Working Directory` > `Staging Area (Snapshot)` > `Repository`
+
+**That is:** `Untracked (U) or Modified (M)` > `Staged (A)` > `Committed`
+
 ### 4.1 Git Initialize
 
 **From the root of your dbt project folder, that is;**
@@ -403,13 +407,7 @@ git init # Converts the folder into a Git repository
 - Your project is now **trackable by Git**, but it is still **local only**.
 - `git init` does not connect to GitHub. It only prepares the folder for version control.
 
-
-### 4.2 Git Insiders
-
-**.git Flow:** `Working Directory` > `Staging Area (Snapshot)` > `Repository`
-
-
-### 4.3 Git Add and Git Commit
+### 4.2 Git Add and Git Commit
 
 An **initial commit** is needed to **register** the master (main) branch.
 
@@ -426,12 +424,12 @@ git commit -m "initial commit"               # Commit staged changes with a mess
 git commit file1.txt file2.py -m "Message"   # Commit only specific files, leaving others staged
 ```
 
-### 4.4 Git Log
+### 4.3 Git Log
 
 
-### 4.5 Gitignore & Gitkeep
+### 4.4 Gitignore & Gitkeep
 
-### 4.6 Git Branches and Merges
+### 4.5 Git Branches and Merges
 
 ```PowerShell
 git branch                   # List all local branches and show the current branch
@@ -460,26 +458,26 @@ git push origin --delete master   # Delete old branch from remote
 ```
 
 
-### 4.7 Merge Conflicts
+### 4.6 Merge Conflicts
 
-### 4.8 Git Rebase
+### 4.7 Git Rebase
 
-### 4.9 Git Reflog and Commit History
+### 4.8 Git Reflog and Commit History
 
-### 4.10 Cherry Picking
+### 4.9 Cherry Picking
 
-### 4.11 Git Stashing
+### 4.10 Git Stashing
 
-### 4.12 Push To GitHub
+### 4.11 Push To GitHub
 
-### 4.13 Git Clone and Push Feature Branch
+### 4.12 Git Clone and Push Feature Branch
 
 
 **Common dbt-git workflow:**
 
 `edit dbt model` > `dbt run` > `dbt test` > `git status` > `git add` > `git commit` > `git push`
 
-### 4.14 Config Git Commands
+### 4.13 Config Git Commands
 
 ```PowerShell
 # Check current configuration
