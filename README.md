@@ -338,7 +338,7 @@ columns:
 dbt test
 ```
 
-**dbt tests (Models only)**
+**dbt tests (Models only):**
 
 ```PowerShell
 # Run tests for a specific model only
@@ -357,7 +357,7 @@ dbt test --select model+
 dbt test --select +model+
 ```
 
-**dbt tests (Sources only)**
+**dbt tests (Sources only):**
 
 ```PowerShell
 # Run all tests for all sources
