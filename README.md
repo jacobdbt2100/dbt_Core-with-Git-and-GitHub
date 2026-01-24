@@ -220,19 +220,22 @@ where order_quantity > 1
 # Run all models
 dbt run
 
-# Run a specific model
+# Run a specific model only
 dbt run --select model_name
 
-# Run multiple models
+# Run multiple specific models
 dbt run --select model1 model2 model3
 
-# Run a model and its upstream dependencies
+# Run models using pattern matching (e.g. all staging models)
+dbt run --select stg_*
+
+# Run a model and its upstream dependencies (parents)
 dbt run --select +model_name
 
-# Run a model and its downstream dependents
+# Run a model and its downstream dependents (children)
 dbt run --select model_name+
 
-# Run both upstream and downstream
+# Run a model, its upstream, and its downstream
 dbt run --select +model_name+
 ```
 
@@ -330,43 +333,7 @@ columns:
 
 `dbt tests` **validates data (checks data quality)** — like `missing values`, `duplicates`, `accepted values`, or `mismatched relationships between tables`.
 
-
-
-TEST MODELS
-
-Run:
-
 ```PowerShell
-dbt test
-```
-
-
-```PowerShell
-# =========================
-# DBT RUN (Models execution)
-# =========================
-
-# Run all models
-dbt run
-
-# Run a specific model only
-dbt run --select customers_view
-
-# Run multiple specific models
-dbt run --select model1 model2 model3
-
-# Run models using pattern matching (e.g. all staging models)
-dbt run --select stg_*
-
-# Run a model and its upstream dependencies (parents)
-dbt run --select +customers_view
-
-# Run a model and its downstream dependents (children)
-dbt run --select customers_view+
-
-# Run a model, its parents, and its children
-dbt run --select +customers_view+
-
 
 # =========================
 # DBT TEST (Tests execution)
