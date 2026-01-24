@@ -385,10 +385,6 @@ dbt test --select source:sales_data.customers
 `Directory` **dbt_project_name/**
 
 ```PowerShell
-# Set your name and email
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
-
 # Initialize git
 git init # Converts the folder into a Git repository
 ```
