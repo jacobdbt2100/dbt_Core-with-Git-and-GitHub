@@ -418,7 +418,7 @@ git init # Converts the folder into a Git repository
 
 **Common dbt-git workflow:**
 
-`edit dbt model` - `dbt run` - `dbt test` - `git add` - `git commit` - `git push`
+`edit dbt model` - `dbt run` - `dbt test` - `git status` - `git add` - `git commit` - `git push`
 
 
 
