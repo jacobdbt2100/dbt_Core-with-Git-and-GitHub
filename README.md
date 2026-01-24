@@ -386,8 +386,19 @@ From the root of your dbt project folder, that is;
 
 ```PowerShell
 # Initialize git
-git init
+git init # Converts the folder into a Git repository
 ```
+
+**When you run git init:** Git creates a hidden `.git/` folder inside your project. That folder stores:
+- Commit history
+- Branches
+- Configuration
+- Staging area
+
+**Note:**
+- Your project is now **trackable by Git**, but it is still **local only**.
+- `git init` does not connect to GitHub. It only prepares the folder for version control.
+
 
 - Git Insiders
 - Git Add and Git Commit
