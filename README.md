@@ -408,6 +408,8 @@ git init # Converts the folder into a Git repository
 
 ### 4.3 Git Add and Git Commit
 
+An **initial commit** is needed to **register** the master (main) branch.
+
 ```PowerShell
 git add .                                    # Stage all changes in the folder
 git add file_name.ext                        # Stage only a specific file
