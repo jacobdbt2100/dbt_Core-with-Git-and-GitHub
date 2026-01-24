@@ -222,6 +222,27 @@ where order_quantity > 1
 
 
 
+```PowerShell
+dbt run
+```
+Alternatively, to run a specific model;
+```bash
+dbt run --select customers_view
+```
+`customers_view` is the only model in this example.
+
+Generally, to run multiple selected models;
+```bash
+dbt run -m model1 model2 model3 ...
+```
+Or equivalently;
+```bash
+dbt run --select model1 model2 model3 ...
+```
+
+`-m`(or `--models`) is the older, common shortcut.
+
+
 
 
 
@@ -279,11 +300,6 @@ models:
                 - prospect
 ```
 
-
-
-
-
-
 **2. Singular (Custom SQL) tests**
 
 `Directory` **tests/customers_email_valid.sql:**
@@ -294,19 +310,6 @@ select *
 from {{ ref('customers') }}
 where email not like '%@%.%'
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ### 3.7 Define test macros (custom generic tests)
 
@@ -330,46 +333,11 @@ columns:
       - email_pattern
 ```
 
-
-
-
 ### 3.8 Test the source(s) and model(s)
 
-```bash
-dbt run
-```
-Alternatively, to run a specific model;
-```bash
-dbt run --select customers_view
-```
-`customers_view` is the only model in this example.
 
-Generally, to run multiple selected models;
-```bash
-dbt run -m model1 model2 model3 ...
-```
-Or equivalently;
-```bash
-dbt run --select model1 model2 model3 ...
-```
 
-`-m`(or `--models`) is the older, common shortcut.
 
-Check in PostgreSQL:
-```sql
-SELECT * FROM dbt_schema.customers_view;
-```
-
-In **schema.yml**, add:
-```yml
-models:
-  - name: customers_view
-    columns:
-      - name: customer_id
-        data_tests:
-          - not_null
-          - unique
-```
 
 
 
@@ -378,7 +346,7 @@ TEST MODELS
 
 Run:
 
-```bash
+```PowerShell
 dbt test
 ```
 `dbt tests` help **validate data quality** — like `missing values`, `duplicates`, or `mismatched relationships between tables`.
