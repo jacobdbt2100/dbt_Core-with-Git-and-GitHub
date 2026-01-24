@@ -400,8 +400,10 @@ git init # Converts the folder into a Git repository
 - `git init` does not connect to GitHub. It only prepares the folder for version control.
 
 
-- Git Insiders
-- Git Add and Git Commit
+### 4.2 Git Insiders
+
+### 4.3 Git Add and Git Commit
+
 - Git Log
 - Gitignore & Gitkeep
 - Git Branches and Merges
