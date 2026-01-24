@@ -456,7 +456,7 @@ git switch -c new_branch     # Alternative to checkout (Git 2.23+)
 
 `edit dbt model` - `dbt run` - `dbt test` - `git status` - `git add` - `git commit` - `git push`
 
-### 4.__ Additional Git Commands
+### 4.__ Config Git Commands
 
 ```PowerShell
 # Check current configuration
