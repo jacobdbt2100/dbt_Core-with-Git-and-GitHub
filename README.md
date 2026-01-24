@@ -420,6 +420,27 @@ git init # Converts the folder into a Git repository
 
 `edit dbt model` - `dbt run` - `dbt test` - `git status` - `git add` - `git commit` - `git push`
 
+### 4.__ Additional Git Commands
+
+```PowerShell
+# Check current configuration
+git config user.name
+git config user.email
+
+# Set your name and email (most common)
+git config --global user.name "Your Name"
+git config --global user.email "you@example.com"
+
+# Levels (Scopes) of git config;
+System (--system); Applies to all users on the machine
+Global (--global); Applies to your user account
+Local (no flag); Applies only to the current project
+
+# Remove a config
+git config --global --unset user.name    # Use name
+git config --global --unset user.email   # Use email
+```
+
 
 
 
