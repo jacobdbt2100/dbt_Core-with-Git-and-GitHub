@@ -432,7 +432,6 @@ git branch new_branch        # Create a new branch (does not switch to it)
 git checkout new_branch      # Switch to an existing branch (new_branch)
 git switch new_branch        # Alternative to checkout (Git 2.23+)
 
-
 git checkout -b new_branch   # Create and switch to a new branch
 git switch -c new_branch     # Alternative to checkout (Git 2.23+)
 ```
