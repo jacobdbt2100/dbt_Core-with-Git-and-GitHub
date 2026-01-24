@@ -379,8 +379,21 @@ dbt test --select source:sales_data.customers
 ## 4. Version Control with Git
 ### 4.1 Initialize Git
 
-- gitignore
-- ...
+Environment Setup
+Git Fundamentals
+Git Initialize
+Git Insiders
+Git Add and Git Commit
+Git Log
+Gitignore & Gitkeep
+Git Branches and Merges
+Merge Conflicts
+Git Rebase
+Git Reflog and Commit History
+Cherry Picking 
+Git Stashing
+Push To GitHub
+Git Clone and Push Feature Branch
 
 
 
