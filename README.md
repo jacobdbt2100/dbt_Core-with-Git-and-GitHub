@@ -223,20 +223,16 @@ where order_quantity > 1
 
 
 ```PowerShell
+# Run all models
 dbt run
-```
-Alternatively, to run a specific model;
-```bash
-dbt run --select customers_view
-```
-`customers_view` is the only model in this example.
 
-Generally, to run multiple selected models;
-```bash
+# Run a specific model
+dbt run --select model_name
+
+# Run multiple selected models
 dbt run -m model1 model2 model3 ...
-```
-Or equivalently;
-```bash
+
+# Run multiple selected models
 dbt run --select model1 model2 model3 ...
 ```
 
