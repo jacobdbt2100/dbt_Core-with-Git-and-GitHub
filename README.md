@@ -405,6 +405,10 @@ git init
 - Git Clone and Push Feature Branch
 
 
+**Common dbt-git workflow:**
+
+`edit dbt model` - `dbt run` - `dbt test` - `git add` - `git commit` - `git push`
+
 
 
 
