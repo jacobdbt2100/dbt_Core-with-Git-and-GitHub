@@ -380,6 +380,7 @@ dbt test --select source:sales_data.customers
 
 - `Git:` A version control system that tracks changes in files.
 - `GitHub:` A cloud platform for hosting and collaborating on Git repositories.
+- `Repository:` A project folder tracked by Git.
 
 ### 4.1 Git Initialize
 
