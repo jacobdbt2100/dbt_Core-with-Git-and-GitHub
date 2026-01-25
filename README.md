@@ -142,7 +142,7 @@ If successful, you’ll see:
 All checks passed!
 ```
 
-## 3. Create and Define dbt Models & Dependencies
+## 3. Create and Define dbt Models, Sources & Tests
 ### 3.1 Create a model file
 
 `Directory` **models/orders_model_view.sql:**
