@@ -437,7 +437,7 @@ git commit file1.txt file2.py -m "Message"   # Commit only specific files, leavi
 
 ### 4.5 Git Branches and Merges
 
-**Branching:**
+**Branch:**
 
 ```PowerShell
 git branch                   # List all local branches and show the current branch
@@ -451,7 +451,7 @@ git checkout -b new_branch   # Create and switch to a new branch
 git switch -c new_branch     # Alternative to checkout (Git 2.23+)
 ```
 
-**Merging:**
+**Merge:**
 
 ```PowerShell
 # In practice, switch to the branch you want to update first (usually main)
