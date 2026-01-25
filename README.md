@@ -432,7 +432,7 @@ git commit file1.txt file2.py -m "Message"   # Commit only specific files, leavi
 
 ### 4.3 Git Log
 
-**Displays commit history and metadata**
+**Displays commit history and metadata.**
 
 ```PowerShell
 git log   # Show the commit history of the current branch
