@@ -485,12 +485,14 @@ file_name.txt   # Ignore file_name.txt
 
 *.log           # Ignore all log files
 
-/build/         # Ignore build folder
+.../build/         # Ignore build folder
 
 data/*.csv      # Ignore dataset CSVs
 ```
 
 - You can also have additional `.gitignore` files in subdirectories to apply rules locally to that folder as below:
+
+`Directory` **data/**
 
 ```text
 *.csv   # Ignore all CSV files only within the data directory
