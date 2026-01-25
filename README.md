@@ -432,7 +432,7 @@ git commit file1.txt file2.py -m "Message"   # Commit only specific files, leavi
 
 ### 4.3 Git Log
 
-**displays commit history and metadata**
+**Displays commit history and metadata**
 
 ```PowerShell
 git log   # Show the commit history of the current branch
@@ -449,6 +449,7 @@ git log   # Show the commit history of the current branch
 
 ```PowerShell
 git log --oneline     # Show each commit on a single line
+
 git log --graph       # Show branch structure visually
 git log --stat        # Show summary of files changed and lines added/removed in each commit
 git log -p            # Show the actual code changes (diff) for each commit
