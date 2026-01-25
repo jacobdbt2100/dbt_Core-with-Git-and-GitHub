@@ -477,13 +477,15 @@ It is **typically** used to **exclude**:
 **Add files/folders to ignore:**
 
 ```text
-.env         # Ignore environment files
+file_name.txt   # Ignore file_name.txt
 
-*.log        # Ignore all log files
+.env            # Ignore environment files
 
-/build/      # Ignore build folder
+*.log           # Ignore all log files
 
-data/*.csv   # Ignore dataset CSVs
+/build/         # Ignore build folder
+
+data/*.csv      # Ignore dataset CSVs
 ```
 
 - You can also have additional `.gitignore` files in subdirectories to apply rules locally to that folder as below:
