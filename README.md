@@ -411,6 +411,8 @@ git init # Converts the folder into a Git repository
 
 An **initial commit** is needed to **register** the master (main) branch.
 
+**Add:**
+
 ```PowerShell
 git add .                                    # Stage all changes in the folder
 git add file_name.ext                        # Stage only a specific file
@@ -418,7 +420,11 @@ git add file1.txt file2.csv file3.py         # Stage multiple specific files at 
 
 # Stage files that share a pattern
 git add *.py                                 # Stage all Python files in the folder
+```
 
+**Commit:**
+
+```PowerShell
 git commit -m "initial commit"               # Commit staged changes with a message
 
 git commit file1.txt file2.py -m "Message"   # Commit only specific files, leaving others staged
