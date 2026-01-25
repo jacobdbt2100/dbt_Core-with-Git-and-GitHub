@@ -446,7 +446,7 @@ git switch -c new_branch     # Alternative to checkout (Git 2.23+)
 ```
 
 Merging:
-=======
+=========================
 
 ```PowerShell
 # In practice, switch to the branch you want to update first (usually main)
