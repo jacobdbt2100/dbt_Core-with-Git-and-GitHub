@@ -449,12 +449,10 @@ git switch -c new_branch     # Alternative to checkout (Git 2.23+)
 =======
 MERGING
 =======
-git merge branch_name   # Merge changes from 'branch_name' into the current branch
-
 
 # In practice, switch to the branch you want to update first (usually main)
-git switch main       # Switch to main branch
-git merge feature-branch  # Merge changes from feature-branch into main
+git switch branch_name        # Switch to branch_name
+git merge feature_branch      # Merge changes from feature_branch into the current branch (branch_name)
 ```
 
 **Rename current branch locally**
@@ -464,7 +462,7 @@ git branch -m main           # Rename current branch to "main"
 git branch -m master main    # Rename "master" to "main" from anywhere
 ```
 
-**Update the remote**
+**Update the remote branch**
 
 ```PowerShell
 git push -u origin main           # Push renamed branch and track it remotely
