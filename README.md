@@ -633,7 +633,28 @@ git reset --hard <commit-id>   # Move HEAD to a specific commit hash (recommende
 
 ### 4.9 Git Diff
 
+`git diff:` shows **changes between files or commits** - what has changed but not yet staged (**working directory**) or changes staged for commit (**staging area**), and differences between commits or branches.
 
+**Common uses:**
+
+```PowerShell
+git diff                  # Changes in working directory not staged
+git diff --staged         # Changes staged for next commit
+git diff HEAD             # All changes since last commit
+git diff branch1 branch2  # Differences between two branches
+```
+
+`git diff` **example output:**
+
+```diff
+diff --git a/app.py b/app.py
+index e69de29..4b825dc 100644
+--- a/app.py
++++ b/app.py
+@@ -0,0 +1,3 @@
++print("Hello World")    # Line added in working directory (unstaged change)
++print("Git is fun")     # Another line added
+```
 
 
 
