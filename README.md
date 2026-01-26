@@ -674,20 +674,20 @@ git switch main                       # Move to the branch where you want the co
 
 git cherry-pick <commit-hash>         # Apply the specified commit from another branch onto the current branch # Creates a new commit on the target branch with a new commit hash
 
-git cherry-pick <commit1> <commit2>   # Apply multiple specific commits in order
+git cherry-pick <commit1> <commit2>   # Apply multiple specific commits in order # Use original commit order to avoid conflicts
 git cherry-pick a1b2c3d..f6g7h8i      # Apply all commits between these two commits
 ```
 
-
-
-
-
-
-
-
-
-
 ### 4.11 Git Stashing
+
+
+
+
+
+
+
+
+
 
 ### 4.12 Push To GitHub
 
