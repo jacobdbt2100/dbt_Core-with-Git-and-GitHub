@@ -631,6 +631,14 @@ git reset --hard <commit-id>   # Move HEAD to a specific commit hash (recommende
 
 `git reset --hard` can **restore a committed file** that was **deleted** from the **working directory** and **staged**.
 
+**Similar commands:**
+
+```PowerShell
+git reset            # Unstage staged changes, move them back to the working directory
+
+git reset HEAD~1     # Move HEAD back 1 commit, unstages changes but keeps file edits in working directory
+```
+
 ### 4.9 Git Diff
 
 `git diff:` shows **changes between files or commits** - what has changed but not yet staged (**working directory**) or changes staged for commit (**staging area**), and differences between commits or branches.
