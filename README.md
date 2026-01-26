@@ -550,6 +550,18 @@ git push -u origin main           # Push renamed branch and track it remotely
 git push origin --delete master   # Delete old branch from remote
 ```
 
+**Delete a local branch:**
+
+```PowerShell
+git branch -d branch_name   # Delete local branch (only if fully merged)
+git branch -D branch_name   # Force delete local branch (even if not merged)
+```
+
+```PowerShell
+**Delete a remote branch:**
+git push origin --delete branch_name   # Delete branch from remote repository
+```
+
 ### 4.6 Merge Conflicts
 
 A situation where Git **cannot automatically merge changes** because **two or more branches modified the same or overlapping lines in a file**. Git needs human decision to resolve competing changes.
