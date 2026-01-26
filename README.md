@@ -649,32 +649,17 @@ git diff branch1 branch2  # Differences between two branches
 ```diff
 diff --git a/app.py b/app.py
 index e69de29..4b825dc 100644
---- a/app.py
-+++ b/app.py
+--- a/app.py                  # original version of the file (before changes)
++++ b/app.py                  # new version of the file (after changes)
 @@ -0,0 +1,3 @@
-+print("Hello World")    # Line added in working directory (unstaged change)
-+print("Git is fun")     # Another line added
++print("Hello World")         # Line added in working directory (unstaged change)
++print("Git is fun")          # Another line added
 ```
 
-```PowerShell
-diff --git a/app.py b/app.py
-index e69de29..4b825dc 100644
---- a/app.py
-+++ b/app.py
-@@ -0,0 +1,3 @@
-+print("Hello World")    # Line added in working directory (unstaged change)
-+print("Git is fun")     # Another line added
-```
 
-```bash
-diff --git a/app.py b/app.py
-index e69de29..4b825dc 100644
---- a/app.py
-+++ b/app.py
-@@ -0,0 +1,3 @@
-+print("Hello World")    # Line added in working directory (unstaged change)
-+print("Git is fun")     # Another line added
-```
+
+
+
 
 
 
