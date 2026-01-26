@@ -606,8 +606,6 @@ git merge rebase_feature       # Fast-forward main to include rebased commits (n
 
 ### 4.8 Git Reflog and Commit History
 
-Time travelling...
-
 ```PowerShell
 git reflog          # Shows local history of HEAD movements (even hidden commits)
 
@@ -631,6 +629,7 @@ git reset --hard HEAD~2        # Move HEAD back 2 commits
 git reset --hard <commit-id>   # Move HEAD to a specific commit hash
 ```
 
+`git reset --hard` can restore a committed file that was deleted from the working directory and staged.
 
 
 
