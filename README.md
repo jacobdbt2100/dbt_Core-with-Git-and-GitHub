@@ -583,13 +583,21 @@ git switch rebase_feature    # You are on the rebase_feature branch
 git rebase main              # Replay commits of feature on top of main
 ```
 
-`git rebase main` rebases (takes the commits that exist on) the **current branch** (`rebase_feature`) onto the **HEAD (latest commit)** of main, then moves `rebase_feature` to point to this new history.
-
-
-
-
+`git rebase main` takes the commits that exist on the **current branch** (`rebase_feature`) onto the **HEAD (latest commit)** of main, then moves the **current branch** (`rebase_feature`) to point to this new history.
 
 ### 4.8 Git Reflog and Commit History
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### 4.9 Cherry Picking
 
