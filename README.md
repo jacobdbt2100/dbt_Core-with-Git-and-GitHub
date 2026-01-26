@@ -536,14 +536,14 @@ git switch branch_name        # Switch to branch_name
 git merge feature_branch      # Merge changes from feature_branch into the current branch (branch_name)
 ```
 
-**Rename current branch locally**
+**Rename current branch locally:**
 
 ```PowerShell
 git branch -m main           # Rename current branch to "main"
 git branch -m master main    # Rename "master" to "main" from anywhere
 ```
 
-**Update the remote branch**
+**Update the remote branch:**
 
 ```PowerShell
 git push -u origin main           # Push renamed branch and track it remotely
