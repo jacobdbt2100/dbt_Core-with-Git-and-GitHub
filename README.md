@@ -621,16 +621,17 @@ git log --oneline   # Shows visible commit history of the current branch
 **Two practical ways to `time travel` in Git:**
 
 1. Go to a previous commit using HEAD reference
-2. Go to a specific commit using its hash/ID
+2. Go to a specific commit using its hash/ID (recommended)
 
 ```PowerShell
 git reset --hard HEAD~1        # Move HEAD to the previous commit (1 step back)
 git reset --hard HEAD~2        # Move HEAD back 2 commits
-git reset --hard <commit-id>   # Move HEAD to a specific commit hash
+git reset --hard <commit-id>   # Move HEAD to a specific commit hash (recommended)
 ```
 
 `git reset --hard` can **restore a committed file** that was **deleted** from the **working directory** and **staged**.
 
+### 4.9 Git Diff
 
 
 
@@ -641,16 +642,15 @@ git reset --hard <commit-id>   # Move HEAD to a specific commit hash
 
 
 
+### 4.10 Cherry Picking
 
-### 4.9 Cherry Picking
+### 4.11 Git Stashing
 
-### 4.10 Git Stashing
+### 4.12 Push To GitHub
 
-### 4.11 Push To GitHub
+### 4.13 Git Clone and Push Feature Branch
 
-### 4.12 Git Clone and Push Feature Branch
-
-### 4.13 Addendum
+### 4.14 Addendum
 
 **Git Configuration Commands:**
 
