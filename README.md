@@ -634,9 +634,10 @@ git reset --hard <commit-id>   # Move HEAD to a specific commit hash (recommende
 **Similar commands:**
 
 ```PowerShell
-git reset            # Unstage staged changes, move them back to the working directory
+git reset                       # Unstage all staged changes, move them back to the working directory (edits remain intact)
+git reset file1.txt file2.txt   # Unstage only these files, keep others staged
 
-git reset HEAD~1     # Move HEAD back 1 commit, unstages changes but keeps file edits in working directory
+git reset HEAD~1                # Move HEAD back 1 commit, unstages changes but keeps file edits in working directory
 ```
 
 ### 4.9 Git Diff
