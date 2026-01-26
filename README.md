@@ -578,9 +578,12 @@ A situation where Git **cannot automatically merge changes** because **two or mo
 - Changes commit hashes and order.
 - Intended to create a linear history but modifies history, unlike FF merge.
 
+```PowerShell
+git switch rebase_feature    # You are on the rebase_feature branch
+git rebase main              # Replay commits of feature on top of main
+```
 
-
-
+`git rebase main` rebases (takes the commits that exist on) the **current branch** (`rebase_feature`) onto the **HEAD (latest commit)** of main.
 
 
 
