@@ -688,20 +688,19 @@ git cherry-pick a1b2c3d..f6g7h8i      # Apply all commits between these two comm
 
 ```PowerShell
 git stash push -m "WIP: message"                           # Save all uncommitted changes with a message
-git stash list                                             # Show all saved stashes
-git stash apply                                            # Reapply the latest stash without removing it
-git stash pop                                              # Reapply the latest stash and remove it from stash list
-git stash drop                                             # Delete a specific stash
 git stash push -m "WIP file1, file2" file1.txt file2.txt   # Stash only specific files with a message
+
+git stash list                                             # Show all stashes with their indices
+
+git stash apply                                            # Reapply the latest stash without removing it
+git stash apply "stash@{n}"                                # Apply the stash at index n (e.g., 0 = most recent)
+
+git stash pop                                              # Applies and removes stash@{0}
+git stash pop "stash@{n}"                                  # Apply and remove a specific stash
+
+git stash drop                                             # Drops stash@{0}
+git stash drop "stash@{n}"                                 # Delete a specific stash without applying it
 ```
-
-
-
-
-
-
-
-
 
 ### 4.12 Push To GitHub
 
