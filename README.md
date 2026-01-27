@@ -709,9 +709,6 @@ git stash drop "stash@{n}"                                 # Delete a specific s
 - `git push` sends commits **from your local repository** to **the remote repository** (GitHub)
 - This is how your local work becomes visible and accessible online to others.
 
-
-
-
 **Git Config:**
 
 ```PowerShell
