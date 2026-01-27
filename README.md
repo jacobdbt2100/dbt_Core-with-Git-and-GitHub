@@ -732,9 +732,26 @@ git config --global --unset user.email   # Use email
 
 **Push Local Repo to Remote (HTTPS Method):**
 
-1. **Get Personal access token;** Click on `Profile` > `Settings` > `Developer Settings` > `Personal acess tokens` > `Tokens (classic)` > `Generate new token` > `Generate new token (classic)`
-2. **Get url;** Click on `Code` and copy HTTPS
+1. **Get `Personal access token`;** Click on `Profile` > `Settings` > `Developer Settings` > `Personal acess tokens` > `Tokens (classic)` > `Generate new token` > `Generate new token (classic)`
+2. **Get `url`;** Click on `Code` and copy HTTPS
+3. **Confirm `remote origin`:**
 
+```PowerShell
+git remote -v    # Show linked remote repositories and their fetch/push URLs
+```
+4. **Add `remote origin`:**
+
+```PowerShell
+git remote add origin "url"    # Link the local repository to a remote named "origin"
+```
+5. Confirm `remote origin` again (`git remote -v`): shows both where Git pulls from and where it pushes to, even if they are identical.
+
+**Different fetch/push URLs** let you **pull from one place** and **push to another**, supporting forks, access restrictions, or **specialized workflows** (e.g., **development & deployment**).
+
+```PowerShell
+git remote set-url origin https://github.com/dev-team/project.git       # Fetch updates from the development repository
+git remote set-url --push origin git@github.com:deployment/project.git  # Push changes to the deployment repository
+```
 
 
 
