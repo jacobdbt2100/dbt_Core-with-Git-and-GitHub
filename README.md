@@ -732,8 +732,10 @@ git config --global --unset user.email   # Use email
 
 **Push Local Repo to Remote (HTTPS Method):**
 
-1. Get `Personal access token`; **Click on** `Profile` > `Settings` > `Developer Settings` > `Personal acess tokens` > `Tokens (classic)` > `Generate new token` > `Generate new token (classic)`
-2. Get `url`; **Click on** `Code` and copy HTTPS
+1. **Get Personal access token;** Click on `Profile` > `Settings` > `Developer Settings` > `Personal acess tokens` > `Tokens (classic)` > `Generate new token` > `Generate new token (classic)`
+2. **Get url;** Click on `Code` and copy HTTPS
+
+
 
 
 
