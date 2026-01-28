@@ -771,7 +771,7 @@ Then **connect to GitHub** using **Personal access token** or some other method 
 
 If error (............
 
-```pgsql
+```diff
 ! [rejected]        main -> main (fetch first)
 error: failed to push some refs to 'https://github.com/user/repo.git'
 hint: Updates were rejected because the remote contains work that you do
