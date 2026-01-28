@@ -839,6 +839,14 @@ git remote -v #  Confirm origin
 git push origin feature_1    # Push the local branch "feature_1" to the remote repository (origin)
                              # "git" won't ask for "Personal access token". It will simply cache the `Personal access token` when you provide it.
                              # You can revoke the token, then "git" will ask for a new one.
+
+# feature_1 push appears in "Remote Repo" with "Compare & pull request" option
+# Observe two branches present; main and feature_1
+# Now create pull request (fetch & merge) by clicking on "Compare & pull request"
+# Add a title (Optional) # Add a description (Optional) # See "Split" or "Unified" changes
+# Click on "Create pull request", "Create pull request", "Merge pull request", and "Confirm merge" to accept changes
+
+# New file (or modification) is now added
 ```
 
 
