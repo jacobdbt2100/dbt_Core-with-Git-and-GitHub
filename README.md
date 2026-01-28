@@ -803,7 +803,15 @@ git push --force origin main              # Overwrite remote main with your loca
 
 ### 4.13 Git Clone and Push Feature Branch
 
+```PowerShell
+git clone "url"    # Download the full repo (files + history) into a new local folder
+                   # Automatically sets the remote name as "origin"
+                   # No need to run git init when you clone
+                   # Easier workflow: create the remote repo first, then clone locally
 
+cd project-folder       # Change into the cloned repository folder
+git status              # Confirm this is a Git repository and see current branch/status
+```
 
 
 
