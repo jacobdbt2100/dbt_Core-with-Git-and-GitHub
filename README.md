@@ -193,7 +193,7 @@ models:
   - name: customers_view             # must match the actual model file name without the .sql extension
     description: "View of customers with key attributes and income info"
     columns:
-      - name: customer_id            # must match the model file name
+      - name: customer_id
         description: "Unique ID for each customer"
       - name: annual_income
         description: "Customer's reported annual income"
