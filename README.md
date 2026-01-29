@@ -157,7 +157,7 @@ select
     item,
     order_quantity,
     total_amt
-from {{ source('sales_data', 'orders') }} -- Use the `source` function to select from source # this interpretes to analytics_db.raw.orders (i.e., database.schema.table)
+from {{ source('sales_data', 'orders') }} -- # Use the `source` function to select from source # this interpretes to analytics_db.raw.orders (i.e., database.schema.table)
 where total_amt > 50000
 ```
 
