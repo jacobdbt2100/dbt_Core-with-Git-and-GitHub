@@ -75,6 +75,16 @@ Plugins:
   - databricks: 1.6.11 # for databricks adapter
 ```
 
+**Note:**
+
+```PowerShell
+# Install Python packages using the "default pip" (may point to global Python)
+pip install package_name
+
+# Install Python packages using the "active Python environment"
+python -m pip install package_name
+```
+
 ## 2. Connect dbt Project to Data Source
 
 ### 2.1 Initialize dbt Project and Configure Profile
