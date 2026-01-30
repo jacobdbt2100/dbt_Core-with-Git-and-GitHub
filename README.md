@@ -488,6 +488,15 @@ git init # Converts the folder into a Git repository
 - Your project is now **trackable by Git**, but it is still **local only**.
 - `git init` does not connect to GitHub. It only prepares the folder for version control.
 
+**To stop git tracking:**
+
+```PowerShell
+Remove-Item -Recurse -Force .git   # In Windows PowerShell
+                                   # stop git tracking by removing the hidden .git repository folder
+
+git status                         # check if the folder is no longer a git repository (should fail)
+```
+
 ### 4.2 Git Add and Git Commit
 
 An **initial commit** is needed to **register** the master (main) branch.
