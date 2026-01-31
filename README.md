@@ -158,10 +158,7 @@ All checks passed!
 `Directory` **models/orders_model_view.sql:**
 
 ```sql
-{{ config(materialized='view') }}
-    -- Optional: overrides the model’s materialization defined in schema.yml (not advised) or dbt_project.yml (more preferred)
-    -- model-level config has the highest priority
-{{ config(alias='model_alias') }} -- Optional
+{{ config(materialized='view') }}      -- Optional
 
 select
     order_id,
@@ -171,6 +168,41 @@ select
 from {{ source('sales_data', 'orders') }} -- # Use the `source` function to select from source # this interpretes to analytics_db.raw.orders (i.e., database.schema.table)
 where total_amt > 50000
 ```
+
+**dbt model materialization priority (highest > lowest):**
+
+```PowerShell
+# 1. Model config block
+# Inline config inside the model SQL file; most explicit and overrides all others
+{{ config(materialized='table') }}
+
+# 2. Properties file (.yml)
+# A properties file is any YAML file under models/ that defines metadata or configuration for dbt resources; schema.yml is the default name.
+models:
+  - name: customers
+    config:
+      materialized: view
+
+# 3. dbt_project.yml
+# Project- or folder-level defaults that apply broadly unless overridden
+models:
+  my_project:
+    +materialized: view
+```
+
+**dbt alias configuration priority (highest → lowest):** follows the same priority rules as other dbt configs.
+
+**alias** is an **optional dbt config** that defines the final database object name (table or view); if omitted, **dbt uses the model filename by default**.
+
+```PowerShell
+{{ config(alias='model_alias') }}      -- Optional
+```
+
+**Other common dbt model configs (besides materialized and alias):**
+- `schema`: override the target schema for a model
+- `database / catalog`: override the target database or catalog
+- `enabled`: include or exclude a model from runs
+- etc.
 
 ### 3.2 Define the source(s)
 
