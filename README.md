@@ -190,7 +190,7 @@ models:
     +materialized: view
 ```
 
-**dbt alias configuration priority (highest → lowest):** follows the same priority rules as other dbt configs.
+**dbt alias configuration** follows the **same priority rules** as `materialized` and other dbt configs.
 
 **alias** is an **optional dbt config** that defines the final database object name (table or view); if omitted, **dbt uses the model filename by default**.
 
