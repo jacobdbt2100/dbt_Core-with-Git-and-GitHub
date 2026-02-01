@@ -1,4 +1,4 @@
-# dbt_Core Setup
+# dbt Core with Git & GitHub
 
 ---
 ## 1. Setup dbt Environment
