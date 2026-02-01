@@ -904,6 +904,10 @@ git pull origin main --allow-unrelated-histories    # Fetch and merge the remote
                                                     # Git normally refuses this when the local repo was created from scratch
                                                     # Recommended workflow to avoid this issue: create the remote repo first, then clone locally
 
+git add .
+
+git commit -m "commit_message"
+
 git push origin main   # Push local 'main' to remote 'origin'
 ```
 
