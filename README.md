@@ -427,7 +427,7 @@ Data models are **built in layers**, adding clarity, structure, and business mea
 - Intermediate / Silver: `Cleaned`, `conformed`, and `reliable data`, `not yet aggregated`.
 - Marts / Gold: `Aggregated`, `business-ready models` for analytics, reporting, and KPIs.
 
-**Typical light cleaning tasks (to make data technically usable):**
+**Typical `light cleaning tasks` (to make data technically usable):**
 - Invalid column names (e.g., remove spaces or special characters)
 - Basic type casting (string > date, number > numeric)
 - Deduplicate obvious duplicates caused by ingestion errors
