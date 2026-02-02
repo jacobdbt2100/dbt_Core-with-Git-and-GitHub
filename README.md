@@ -1000,8 +1000,9 @@ git push origin feature_1    # Push the local "feature_1" branch to the remote (
 
 **ADVANCE:**
 1. Incremental models
-2. Advanced testing; Freshness checks
+2. Advanced testing
 3. Snapshots (SCD Type-2)
+4. Source freshness checks
 
 
 ### Incremental models
