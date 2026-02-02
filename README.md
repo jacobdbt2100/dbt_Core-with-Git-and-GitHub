@@ -423,9 +423,16 @@ dbt test --select source:sales_data.customers
 
 Data models are **built in layers**, adding clarity, structure, and business meaning at each stage.
 
-- Staging / Bronze: Raw source data, lightly cleaned and standardised, with basic metadata, no business logic.
-- Intermediate / Silver: Cleaned, conformed, and reliable data, not yet aggregated.
-- Marts / Gold: Aggregated, business-ready models for analytics, reporting, and KPIs.
+- Staging / Bronze: `Raw source data`, `lightly cleaned and standardised`, with `basic metadata`, `no business logic`.
+- Intermediate / Silver: `Cleaned`, `conformed`, and `reliable data`, `not yet aggregated`.
+- Marts / Gold: `Aggregated`, `business-ready models` for analytics, reporting, and KPIs.
+
+**Typical light cleaning tasks (to make data technically usable):**
+- Invalid column names (e.g., remove spaces or special characters)
+- Basic type casting (string > date, number > numeric)
+- Deduplicate obvious duplicates caused by ingestion errors
+- Handle completely corrupt rows (e.g., fully null rows)
+- Add ingestion metadata (ingested_at, source_system)
 
 ### 3.10 Other `dbt` commands
 
