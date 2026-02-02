@@ -434,6 +434,11 @@ Data models are **built in layers**, adding clarity, structure, and business mea
 - Handle completely corrupt rows (e.g., fully null rows)
 - Add ingestion metadata (ingested_at, source_system)
 
+**Recommended materialisation strategy for each layer:**
+- Bronze / Staging: **table**; often large, stores raw data efficiently and avoid recomputation.
+- Silver / Intermediate: **view**; if transformations are lightweight, or **table**; if computation is expensive.
+- Gold / Marts: **table**; to provide fast, business-ready metrics for dashboards and reporting.
+
 ### 3.10 Other `dbt` commands
 
 ```PowerShell
