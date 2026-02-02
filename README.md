@@ -423,7 +423,7 @@ dbt test --select source:sales_data.customers
 
 Data models are **built in layers**, adding clarity, structure, and business meaning at each stage.
 
-- Staging / Bronze: `Raw source data`, `lightly cleaned and standardised`, with `basic metadata`, `no business logic`.
+- Staging / Bronze: `Raw source data`, **`lightly cleaned and standardised`**, with `basic metadata`, `no business logic`.
 - Intermediate / Silver: `Cleaned`, `conformed`, and `reliable data`, `not yet aggregated`.
 - Marts / Gold: `Aggregated`, `business-ready models` for analytics, reporting, and KPIs.
 
