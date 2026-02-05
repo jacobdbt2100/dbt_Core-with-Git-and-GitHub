@@ -948,8 +948,16 @@ git clone "url"    # Download the full repo (files + history) into a new local f
                    # No need to run git init when you clone
                    # Easier workflow: create the remote repo first, then clone locally
 
-cd project-folder       # Change into the cloned repository folder
-git status              # Confirm this is a Git repository and see current branch/status
+cd project-folder               # Change into the cloned repository folder; OR
+git clone "url" my_folder_name  # To clone into a specific folder name
+
+git status                      # Confirm this is a Git repository and see current branch/status
+```
+
+`To update already-cloned repo:`
+```PowerShell
+cd repo-name     # Enter the already-cloned repo folder
+git pull         # Download and merge the latest changes from the remote
 ```
 
 **Push Feature Branch:**
