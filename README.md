@@ -1143,7 +1143,7 @@ dbt_project_name:
       threads: 1
       token: xxxxx
       type: databricks
-    prod:                                                  # Added for production models output
+    prod:                                                  # Added another connection to the warehouse for production models output
       catalog: dbt_project_prod
       host: dbc-71c78b23-9eaa.cloud.databricks.com
       http_path: /sql/1.0/warehouses/8e5d3729930bb8f2
@@ -1152,6 +1152,25 @@ dbt_project_name:
       token: xxxxx
       type: databricks
   target: dev
+```
+
+```sql
+# Avoid manually changing target (dev/prod).
+# Use dynamic targeting to parameterise schema/database per environment.
+
+# Create an analysis file to print the active target's catalog/database
+# analyses/target_check.sql
+# {{ target.catalog }}
+
+# Compile to confirm which target connection is currently active
+dbt compile            # expect: dbt_project_dev  # because profile is currently pointing to "dev" (target: dev)
+
+# Other useful target variables:
+# {{ target.schema }}
+# {{ target.name }}
+# {{ target.type }}
+# {{ target.database }}   # often same as catalog
+# {{ target.warehouse }}  # if your adapter supports it
 ```
 
 Original **source.yml**
@@ -1187,7 +1206,7 @@ sources:
 **Deploy changes to Production:**
 
 ```PowerShell
-dbt build --target prod #      Override the target variable value
+dbt build --target prod #      Overrides the target variable value in the new profiles.yml file from "dev" to "prod"
 ```
 
 
