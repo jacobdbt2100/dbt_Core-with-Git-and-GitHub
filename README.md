@@ -1109,6 +1109,65 @@ They allow ongoing development without disrupting production models, tests, or d
 - If documentation was generated, this can be viewed.
 - If `dbt source freshness` was run, the results can also be viewed at the end of a job.
 
+### Creating a Deployment Environment with dbt CLI (for demonstration; no orchestration)
+
+Original **profiles.yml**
+
+```text
+dbt_project_name:
+  outputs:
+    dev:
+      catalog: dbt_project_dev
+      host: dbc-71c78b23-9eaa.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/8e5d3729930bb8f2
+      schema: schema_dev
+      threads: 1
+      token: xxxxx
+      type: databricks
+  target: dev
+```
+
+Edited **profiles.yml**
+
+```text
+dbt_project_name:
+  outputs:
+    dev:
+      catalog: dbt_project_dev
+      host: dbc-71c78b23-9eaa.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/8e5d3729930bb8f2
+      schema: schema_dev
+      threads: 1
+      token: xxxxx
+      type: databricks
+    prod:
+      catalog: dbt_project_prod
+      host: dbc-71c78b23-9eaa.cloud.databricks.com
+      http_path: /sql/1.0/warehouses/8e5d3729930bb8f2
+      schema: schema_prod
+      threads: 1
+      token: xxxxx
+      type: databricks
+  target: dev
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
