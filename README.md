@@ -1111,6 +1111,9 @@ They allow ongoing development without disrupting production models, tests, or d
 
 ### Creating a Deployment Environment with dbt CLI (for demonstration; no orchestration)
 
+- Manually create a **deployment database/catalog** and **schema**.
+- Update **profiles.yml** and **source.yml**
+
 Original **profiles.yml**
 
 ```text
@@ -1127,7 +1130,7 @@ dbt_project_name:
   target: dev
 ```
 
-Edited **profiles.yml**
+Edit **profiles.yml** to:
 
 ```text
 dbt_project_name:
@@ -1151,12 +1154,35 @@ dbt_project_name:
   target: dev
 ```
 
+Original **source.yml**
 
+```text
+version: 2
 
+sources:
+  - name: xxxxx
+    description: "xxxxx"
+    database: dbt_project_dev
+    schema: schema_dev
+    tables:
 
+...and so on
+```
 
+Edit **source.yml** to:
 
+```text
+version: 2
 
+sources:
+  - name: goods_delivery_data
+    description: "Raw goods delivery data from the company's transactional system"
+    database: dbt_project_dev # Updated
+    schema: schema_dev
+    tables:
+
+...and so on
+```
 
 
 
