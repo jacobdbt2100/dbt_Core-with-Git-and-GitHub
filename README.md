@@ -1045,7 +1045,6 @@ The status of a product in the inventory system:
 {% enddocs %}
 ```
 
-
 `Directory` **models/staging/staging.yml**
 
 ```yml
@@ -1063,7 +1062,7 @@ models:
         description: "{{ doc('product_status') }}"  # references the doc block
 ```
 
-
+`Output:`
 ```PowerShell
 dbt docs generate  # Builds the docs files into the /target folder
 
