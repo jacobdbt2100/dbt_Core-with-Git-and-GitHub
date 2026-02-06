@@ -1026,8 +1026,9 @@ where ingested_at > (select max(ingested_at) from {{ this }})      # Load only n
 
 - Documentation of models occurs in the YML files (where generic tests also live) inside the models directory. It is helpful to store the YML file in the same subfolder as the models you are documenting.
 - For models, **descriptions** can happen at the **model**, **source**, or **column** level.
-- If a longer form, more styled version of text would provide a strong description, **doc blocks** can be used to render markdown in the generated documentation.
+- If a longer form, more styled version of text would provide a strong description, **doc blocks** can be used to render **markdown** (.md) in the generated documentation.
 
+`models/orders/orders_docs.md`
 ```md
 {% docs order_id %}
 A unique identifier for each order.
@@ -1038,7 +1039,18 @@ Example:
 {% enddocs %}
 ```
 
+```PowerShell
+dbt docs generate  # Builds the docs files into the /target folder
 
+target/
+    index.html        # docs website entry file
+    manifest.json     # contains docs + project graph
+    catalog.json      # contains column metadata (from the warehouse)
+
+dbt docs serve     # Starts a local web server to view the docs in your browser
+```
+
+dbt **references doc blocks** by the **doc block name**, not the file name. Hence, a single **.md** file can accommodate many doc blocks.
 
 ### Deployment
 A **job** executes dbt commands in deployment environments.
