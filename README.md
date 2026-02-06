@@ -1111,8 +1111,8 @@ They allow ongoing development without disrupting production models, tests, or d
 
 ### Creating a Deployment Environment with dbt CLI (for demonstration; no orchestration)
 
-- Manually create a **deployment database/catalog** and **schema**.
-- Update **profiles.yml** and **source.yml**
+- Manually create a source **database/catalog** and **schema** for deployment environment and populate with data.
+- Update **profiles.yml** and **source.yml** for the outputs.
 
 Original **profiles.yml**
 
@@ -1130,7 +1130,7 @@ dbt_project_name:
   target: dev
 ```
 
-Edit **profiles.yml** to:
+Update **profiles.yml** to:
 
 ```text
 dbt_project_name:
@@ -1143,7 +1143,7 @@ dbt_project_name:
       threads: 1
       token: xxxxx
       type: databricks
-    prod:
+    prod:                                                  # Added for production
       catalog: dbt_project_prod
       host: dbc-71c78b23-9eaa.cloud.databricks.com
       http_path: /sql/1.0/warehouses/8e5d3729930bb8f2
@@ -1169,15 +1169,15 @@ sources:
 ...and so on
 ```
 
-Edit **source.yml** to:
+Update **source.yml** to:
 
 ```text
 version: 2
 
 sources:
-  - name: goods_delivery_data
+  - name: xxxxx
     description: "Raw goods delivery data from the company's transactional system"
-    database: dbt_project_dev # Updated
+    database: {{'target.catalog'}} # Updated to adjust dynamically
     schema: schema_dev
     tables:
 
