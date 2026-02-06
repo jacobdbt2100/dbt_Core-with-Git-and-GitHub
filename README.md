@@ -1022,7 +1022,7 @@ current_timestamp as ingested_at      # Adds a new column "ingested_at" and fill
 where ingested_at > (select max(ingested_at) from {{ this }})      # Load only new data
 ```
 
-
+A **job** executes dbt commands in deployment environments.
 
 
 
