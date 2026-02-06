@@ -1028,6 +1028,18 @@ where ingested_at > (select max(ingested_at) from {{ this }})      # Load only n
 - For models, **descriptions** can happen at the **model**, **source**, or **column** level.
 - If a longer form, more styled version of text would provide a strong description, **doc blocks** can be used to render markdown in the generated documentation.
 
+```md
+{% docs order_id %}
+A unique identifier for each order.
+
+Example:
+- `1001`
+- `1002`
+{% enddocs %}
+```
+
+
+
 ### Deployment
 A **job** executes dbt commands in deployment environments.
 
