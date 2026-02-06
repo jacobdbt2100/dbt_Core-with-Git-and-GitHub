@@ -1143,7 +1143,7 @@ dbt_project_name:
       threads: 1
       token: xxxxx
       type: databricks
-    prod:                                                  # Added for production
+    prod:                                                  # Added for production models output
       catalog: dbt_project_prod
       host: dbc-71c78b23-9eaa.cloud.databricks.com
       http_path: /sql/1.0/warehouses/8e5d3729930bb8f2
@@ -1177,14 +1177,18 @@ version: 2
 sources:
   - name: xxxxx
     description: "Raw goods delivery data from the company's transactional system"
-    database: {{'target.catalog'}} # Updated to adjust dynamically
+    database: '{{target.catalog}}' # Updated hard-coded database value to adjust dynamically. Do same in other files (e.g., in snapshots)
     schema: schema_dev
     tables:
 
 ...and so on
 ```
 
+**Deploy changes to Production:**
 
+```PowerShell
+dbt build --target prod #      Override the target variable value
+```
 
 
 
