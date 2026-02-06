@@ -1028,7 +1028,7 @@ where ingested_at > (select max(ingested_at) from {{ this }})      # Load only n
 - For models, **descriptions** can happen at the **model**, **source**, or **column** level.
 - If a longer form, more styled version of text would provide a strong description, **doc blocks** can be used to render **markdown** (.md) in the generated documentation.
 
-`models/orders/orders_docs.md`
+`Directory` **models/orders/orders_docs.md**
 ```md
 {% docs order_id %}
 A unique identifier for each order.
