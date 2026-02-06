@@ -1050,6 +1050,7 @@ target/
 dbt docs serve     # Starts a local web server to view the docs in your browser
 ```
 
+**Note:**
 dbt **references doc blocks** by the **doc block name**, not the file name. Hence, a single **.md** file can accommodate many doc blocks.
 
 ### Deployment
