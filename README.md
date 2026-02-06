@@ -1208,7 +1208,7 @@ sources:
 **Deploy changes to Production:**
 
 ```PowerShell
-dbt build --target prod #      Overrides the target variable value in the new profiles.yml file from "dev" to "prod"
+dbt build --target prod  # Overrides the target in profiles.yml from "dev" to "prod" for this run
 ```
 
 
