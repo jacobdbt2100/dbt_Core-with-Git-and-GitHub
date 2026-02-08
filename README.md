@@ -460,6 +460,11 @@ dbt clean      # confirm: folders are deleted and recreated on next run
 
 # Runs models, tests, snapshots, and seeds in dependency order
 dbt build      # confirm: models created and tests pass without errors
+
+dbt run-operation <macro_name>              # Runs a macro (one-off/admin task), not models
+dbt run-operation <macro_name> --args '{}'  # Runs a macro with arguments (YAML/JSON-like)
+
+dbt retry                                   # Re-runs only nodes that failed in the last run, including any upstream dependencies required for them
 ```
 
 ### 3.11 dbt folders and uses
