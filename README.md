@@ -1225,10 +1225,15 @@ dbt build --target prod  # Overrides the target in profiles.yml from "dev" to "p
 
 Personally Identifiable Information (**PII**) is any data that can identify a specific person, either directly or indirectly; full name, phone number, email address, home address, National ID / passport number, bank account details, date of birth.
 
-
-
-
 ### Source Freshness
+
+- **Freshness thresholds** can be set in the YML file where sources are configured. For each table, the keys `loaded_at_field` and `freshness` must be configured.
+- A threshold can be configured for giving a **warning** and an **error** with the keys `warn_after` and `error_after`.
+- The **freshness of sources** can then be **determined** with the command `dbt source freshness`.
+
+
+
+
 
 
 - Add at the source level or the model level
