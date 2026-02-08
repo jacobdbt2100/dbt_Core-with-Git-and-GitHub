@@ -446,7 +446,7 @@ Data models are **built in layers**, adding clarity, structure, and business mea
 - Silver / Intermediate: **view**; if transformations are lightweight, or **table**; if computation is expensive.
 - Gold / Marts: **table**; to provide fast, business-ready metrics for dashboards and reporting.
 
-### 3.10 Other `dbt` commands
+### 3.10 Other `dbt` fundamentals commands
 
 ```PowerShell
 # Checks configs, YAML, and Jinja; does not touch the database
