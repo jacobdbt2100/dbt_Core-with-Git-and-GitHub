@@ -1103,7 +1103,8 @@ They allow ongoing development without disrupting production models, tests, or d
   - `IMPORTANT:` When deploying a real dbt Project, you should set up a separate data warehouse account for this run. This should not be the same account that you personally use in development.
   - `IMPORTANT:` The schema used in production should be different from anyone's development schema.
 
-**Scheduling a job in dbt:** A **job** executes dbt commands in deployment environments.
+**Scheduling a job in dbt:** A **dbt job** is a **deployment workflow** that runs dbt commands (like `dbt build`, `dbt test`, `dbt run`) on a **schedule or trigger**.
+
 - Scheduling of future jobs can be configured in dbt on the Jobs page.
 - You can select the deployment environment that you created before or a different environment if needed.
 - **Commands:** A single job can run multiple dbt commands. For example, you can run `dbt run` and `dbt test` back to back on a schedule. You don't need to configure these as separate jobs.
